@@ -24,6 +24,7 @@
 		"@expressive-code/plugin-collapsible-sections": "^0.44.1",
 		"@expressive-code/plugin-line-numbers": "^0.44.1",
 		"@fancyapps/ui": "^6.1.14",
+		"@iconify-json/fa6-brands": "^1.2.6",
 		"@iconify-json/fa7-brands": "^1.2.4",
 		"@iconify-json/fa7-solid": "^1.2.5",
 		"@iconify-json/material-symbols": "^1.2.88",
@@ -59,5 +60,5 @@
 		"@types/mdast": "^4.0.4",
 		"typescript": "^6.0.3"
 	},
-	"packageManager": "pnpm@11.20.0"
+	"packageManager": "pnpm@11.22.0"
 }

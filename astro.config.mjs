@@ -53,7 +53,7 @@ export default defineConfig({
 		defaultStrategy: "hover",
 	},
 
-	site: "https://fuwari.oh1.top/",
+	site: "https://wylnb.mirrorx.ltd/",
 	base: "/",
 	trailingSlash: "always",
 

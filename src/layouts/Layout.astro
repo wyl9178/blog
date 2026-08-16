@@ -35,12 +35,21 @@ interface Props {
 const { title, description, setOGTypeArticle, lang } = Astro.props;
 let { banner, postData } = Astro.props;
 
+const configBanner = (() => {
+	const src = siteConfig.banner.src;
+	if (typeof src === "string") return src;
+	if (Array.isArray(src)) return src[0] ?? "";
+	const desktop = Array.isArray(src.desktop) ? src.desktop[0] : src.desktop;
+	const mobile = Array.isArray(src.mobile) ? src.mobile[0] : src.mobile;
+	return desktop ?? mobile ?? "";
+})();
+
 const isHomePage = pathsEqual(Astro.url.pathname, url("/"));
 const configHue = siteConfig.themeColor.hue;
 const enableBanner = siteConfig.banner.enable;
 
 if (!banner || typeof banner !== "string" || banner.trim() === "") {
-	banner = siteConfig.banner.src;
+	banner = configBanner;
 }
 
 // 文章数据（用于 OG 标签）- 优先使用 prop 传入的数据
@@ -77,7 +86,7 @@ const favicons: Favicon[] =
 const siteLang = lang ?? "zh-CN";
 
 function resolveImageUrl(src: string | undefined): string {
-	if (!src) return siteConfig.banner.src;
+	if (!src) return configBanner;
 	if (src.startsWith("http")) return src;
 	if (src.startsWith("/")) return new URL(src, Astro.site).toString();
 	return src;
