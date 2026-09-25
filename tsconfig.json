@@ -1,23 +1,38 @@
 {
-	"extends": "astro/tsconfigs/strict",
-	"compilerOptions": {
-		"moduleResolution": "bundler",
-		"strictNullChecks": true,
-		"allowJs": false,
-		"declaration": true,
-		"plugins": [
-			{
-				"name": "@astrojs/ts-plugin"
-			}
-		],
-		"paths": {
-			"@assets/*": ["./src/assets/*"],
-			"@components/*": ["./src/components/*"],
-			"@constants/*": ["./src/constants/*"],
-			"@utils/*": ["./src/utils/*"],
-			"@layouts/*": ["./src/layouts/*"],
-			"@/*": ["./src/*"]
-		}
-	},
-	"include": [".astro/types.d.ts", "src/**/*"]
+  "extends": "astro/tsconfigs/strict",
+  "include": [
+    ".astro/types.d.ts",
+    "**/*"
+  ],
+  "exclude": [
+    "dist",
+    "node_modules"
+  ],
+  "compilerOptions": {
+    "strictNullChecks": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./node_modules/shirones/src/*"
+      ],
+      "@components/*": [
+        "./node_modules/shirones/src/components/*"
+      ],
+      "@utils/*": [
+        "./node_modules/shirones/src/utils/*"
+      ],
+      "@layouts/*": [
+        "./node_modules/shirones/src/layouts/*"
+      ],
+      "@i18n/*": [
+        "./node_modules/shirones/src/i18n/*"
+      ],
+      "@constants/*": [
+        "./node_modules/shirones/src/constants/*"
+      ],
+      "@assets/*": [
+        "./node_modules/shirones/src/assets/*"
+      ]
+    }
+  }
 }

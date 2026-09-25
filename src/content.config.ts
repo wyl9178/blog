@@ -1,37 +1,33 @@
 import { defineCollection } from "astro:content";
 import { glob } from "astro/loaders";
-import { z } from "astro/zod";
+import { postSchema, momentSchema, specSchema, seriesSchema } from "shirones/collections";
 
-export const postSchema = z.object({
-	title: z.string(),
-	published: z.date(),
-	updated: z.date().optional(),
-	draft: z.boolean().optional().default(false),
-	description: z.string().optional().default(""),
-	image: z.string().optional().default(""),
-	tags: z.array(z.string()).optional().default([]),
-	category: z.string().optional().nullable().default(""),
-
-	pinned: z.boolean().optional().default(false),
-});
-
-const postsCollection = defineCollection({
-	loader: glob({
-		pattern: "**/*.{md,mdx}",
-		base: "./src/content/posts/",
-		// 使用完整相对路径作为 id，保留目录结构
-		// index.md 文件保留 /index 后缀，确保 getDir() 能正确提取目录
-		generateId: ({ entry }) => entry.replace(/\.mdx?$/, ""),
-	}),
+/**
+ * Shirone content collections — inline schemas for full type safety and Astro
+ * typegen support (a schema hidden behind a helper call cannot be
+ * introspected). Edit the `base` paths if you moved the content directory;
+ * the schemas themselves come from the theme.
+ *
+ * Generated from the theme's `src/integration/collections.manifest.json`.
+ */
+const posts = defineCollection({
+	loader: glob({ base: "./shirones/content/posts", pattern: "**/*.{md,mdx}" }),
 	schema: postSchema,
 });
 
-const specCollection = defineCollection({
-	loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/spec/" }),
-	schema: z.object({}),
+const moments = defineCollection({
+	loader: glob({ base: "./shirones/content/moments", pattern: "**/*.md" }),
+	schema: momentSchema,
 });
 
-export const collections = {
-	posts: postsCollection,
-	spec: specCollection,
-} as const;
+const spec = defineCollection({
+	loader: glob({ base: "./shirones/content/spec", pattern: "**/*.{md,mdx}" }),
+	schema: specSchema,
+});
+
+const series = defineCollection({
+	loader: glob({ base: "./shirones/content/series", pattern: "**/*.md" }),
+	schema: seriesSchema,
+});
+
+export const collections = { posts, moments, spec, series } as const;

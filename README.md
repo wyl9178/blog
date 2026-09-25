@@ -1,22 +1,37 @@
-# 🍥Fuwari
+# Shirone Blog
 
-基于 [Astro](https://astro.build) 开发的静态博客模板。
+This site runs on [Shirone](https://github.com/LyraVoid/Shirone) — an
+anime-inspired, Material 3 Expressive blog theme for Astro, installed as the
+`shirones` npm package.
 
-[**🖥️在线预览**](https://fuwari.oh1.top)
+## Commands
 
-![Preview Image](https://raw.githubusercontent.com/saicaca/resource/main/fuwari/home.png)
+```bash
+pnpm install   # install dependencies (run once after init)
+pnpm dev       # start the dev server at http://localhost:4321
+pnpm build     # static build → dist/
+pnpm preview   # preview the production build locally
+```
 
-## 食用方法
-1.  [Fork本项目](https://github.com/yCENzh/fuwari/fork)
-2.  使用静态托管网站创建一个项目 -> 导入现有Git存储库 -> 保存并构建(本项目以pnpm构建)
-3.  没了,非常的简单,后续食用方法请查看我的博客
+## Project layout
 
-Fuwari 是一个开源的主题。本网站用于该项目的文档、演示与社区信息。
+| Path | What it is |
+| --- | --- |
+| `shirones/config/` | site configuration — URL, title, theme colour, sidebar, fonts (TypeScript, fully typed) |
+| `shirones/config/data/` | friends, projects, skills, timeline, … |
+| `shirones/content/` | your posts, moments and other collections |
+| `src/components/` | drop a file here to override a theme component (mirrors the theme's `src/components/` tree) |
+| `src/layouts/` | …same for layouts |
+| `public/` | static assets (favicons, banners, images) |
 
-- 网站： https://fuwari.oh1.top
-- 仓库： https://github.com/yCENzh/fuwari
-- License： MIT（见 ./LICENSE）
+## Updating the theme
 
-## 📄 License
+```bash
+npx shirones init            # report drift only
+npx shirones init --update   # add missing files without replacement
+npx shirones init --force    # replace the template after backing up the old copy
+```
 
-This project is licensed under the MIT License.
+`--force` moves the previous `shirones/`, `public/` and project scaffold files
+to `.shirones-backup/` before copying the installed template. See the package
+documentation for the full configuration reference and component-override rules.
