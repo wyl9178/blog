@@ -12,7 +12,8 @@ import { withUserConfig } from "@/utils/config-overlay.ts";
 export const siteConfig: SiteConfig = withUserConfig("site", {
 	site: "https://wylnb.mirrorx.ltd/",
 	base: "/",
-	title: "Shirone",
+			title: "WYL.龙尊の博客",
+
 	subtitle: "A Material 3 anime blog",
 	// 电脑端顶栏标题与导航内容区域："left" 左对齐，"center" 居中。
 	topAppBar: {
@@ -70,7 +71,8 @@ export const siteConfig: SiteConfig = withUserConfig("site", {
 		homeText: {
 			// 仅在首页 Banner 中显示，标题与副标题会上下居中排列。
 			enable: true,
-			title: "Shirone",
+	title: "WYL.龙尊の博客",
+
 			subtitle: [
 				"记录生活，也记录那些不经意的瞬间",
                 "愿这里，装得下我的所思所想",
@@ -124,7 +126,7 @@ export const siteConfig: SiteConfig = withUserConfig("site", {
 	},
 	favicon: [
 		// 浏览器标签页图标，路径相对于 public 目录。
-		{ src: "/logo/icon.webp" },
+		{ src: "/logo/icon.png" },
 	],
 });
 
