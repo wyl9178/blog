@@ -3,6 +3,8 @@
 allowBuilds:
   esbuild: true
   sharp: true
+minimumReleaseAgeExclude:
+  - shirones@0.1.5
 onlyBuiltDependencies:
   - esbuild
   - sharp

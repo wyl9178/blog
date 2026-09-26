@@ -38,12 +38,6 @@ export const LinkPresets: Record<string, NavBarLink> = {
 		icon: "material-symbols:home-outline-rounded",
 		pageKey: "home",
 	},
-	Archive: {
-		name: i18n(I18nKey.archive),
-		url: "/archive/",
-		icon: "material-symbols:archive-outline-rounded",
-		pageKey: "archive",
-	},
 	Friends: {
 		name: i18n(I18nKey.friends),
 		url: "/friends/",
@@ -55,18 +49,6 @@ export const LinkPresets: Record<string, NavBarLink> = {
 		url: "/moments/",
 		icon: "material-symbols:auto-awesome-outline-rounded",
 		pageKey: "moments",
-	},
-	Anime: {
-		name: i18n(I18nKey.anime),
-		url: "/anime/",
-		icon: "material-symbols:live-tv-outline-rounded",
-		pageKey: "anime",
-	},
-	Compass: {
-		name: i18n(I18nKey.compass),
-		url: "/compass/",
-		icon: "material-symbols:explore-rounded",
-		pageKey: "compass",
 	},
 	Skills: {
 		name: i18n(I18nKey.skills),
@@ -85,12 +67,6 @@ export const LinkPresets: Record<string, NavBarLink> = {
 		url: "/devices/",
 		icon: "material-symbols:devices-rounded",
 		pageKey: "devices",
-	},
-	Games: {
-		name: i18n(I18nKey.games),
-		url: "/games/",
-		icon: "material-symbols:sports-esports-outline-rounded",
-		pageKey: "games",
 	},
 	Timeline: {
 		name: i18n(I18nKey.timeline),
@@ -116,35 +92,20 @@ export const LinkPresets: Record<string, NavBarLink> = {
 		icon: "material-symbols:tag-rounded",
 		pageKey: "tags",
 	},
-	Series: {
-		name: i18n(I18nKey.series),
-		url: "/series/",
-		icon: "material-symbols:auto-stories-outline-rounded",
-		pageKey: "series",
-	},
 	About: {
 		name: i18n(I18nKey.about),
 		url: "/about/",
 		icon: "material-symbols:info-outline-rounded",
 		pageKey: "about",
 	},
-	GitHub: {
-		name: "GitHub",
-		url: "https://github.com/LyraVoid/Shirone",
-		icon: "fa6-brands:github",
-		external: true,
-		pageKey: "github",
-	},
+
 };
 
 const defaultNavBarConfig: NavBarConfig = {
 	links: [
 		LinkPresets.Home,
-		LinkPresets.Archive,
 		LinkPresets.Friends,
 		LinkPresets.Moments,
-		LinkPresets.Anime,
-		LinkPresets.Compass,
 		LinkPresets.Albums,
 		{
 			name: i18n(I18nKey.more),
@@ -153,14 +114,12 @@ const defaultNavBarConfig: NavBarConfig = {
 				LinkPresets.Timeline,
 				LinkPresets.Projects,
 				LinkPresets.Devices,
-				LinkPresets.Games,
 				LinkPresets.Skills,
 				// 分类/标签入口不进导航菜单（避免菜单项过多），预设已登记指向独立页面，
 				// 需要时取消注释即可
 				// LinkPresets.Categories,
 				// LinkPresets.Tags,
 				LinkPresets.About,
-				LinkPresets.GitHub,
 			],
 		},
 	],

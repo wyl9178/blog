@@ -20,18 +20,18 @@ export const siteConfig: SiteConfig = withUserConfig("site", {
 	},
 	// 显示设置面板控制：配置各项前端切换项的可见性（默认全部开启）。
 	displaySettings: {
-		colorStyle: true, // 是否展示配色风格 9 宫格
-		colorSpec: true, // 是否展示 Color Spec 调色规范切换
-		wallpaperMode: true, // 是否展示页面背景（纯色/横幅）切换
+		colorStyle: false, // 是否展示配色风格 9 宫格
+		colorSpec: false, // 是否展示 Color Spec 调色规范切换
+		wallpaperMode: false, // 是否展示页面背景（纯色/横幅）切换
 		layoutMode: true, // 是否展示文章列表布局（列表/网格）切换
 		reduceMotion: true, // 是否展示减少动效切换
-		texture: true, // 是否展示背景纹理选择
+		texture: false, // 是否展示背景纹理选择
 	},
-	lang: "en", // Language code, e.g. 'en', 'zh_CN', 'ja', etc.
+	lang: "zh_CN", // Language code, e.g. 'en', 'zh_CN', 'ja', etc.
 	// IANA time zone for precise post and moment timestamps. It is independent of lang.
 	timeZone: "Asia/Shanghai",
 	themeColor: {
-		hue: 315, // Default hue 0-360. 站点设计默认粉紫（偏二次元）；262 紫 / 345 粉 也可选
+		hue: 190, // Default hue 0-360. 站点设计默认粉紫（偏二次元）；262 紫 / 345 粉 也可选
 		fixed: false, // Hide the theme color picker for visitors
 		// Dynamic Material 3 palette style (TonalSpot/Vibrant/Content/Expressive/Rainbow/FruitSalad/Monochrome/Neutral/Fidelity)
 		style: "tonalSpot",
@@ -48,7 +48,7 @@ export const siteConfig: SiteConfig = withUserConfig("site", {
 	texture: {
 		enable: true, // 是否启用背景纹理系统
 		defaultPreset: "starlight", // 默认纹理预设："none" | "starlight" | "cyber-dots" | "topography" | "geometric" | "sakura"
-		defaultOpacity: 0.12, // 默认纹理浓度 (0.05 ~ 0.25)
+		defaultOpacity: 0.10, // 默认纹理浓度 (0.05 ~ 0.25)
 		allowMotion: true, // 是否允许背景微动效（开启 reduced-motion 时自动静止）
 	},
 	banner: {
@@ -57,8 +57,8 @@ export const siteConfig: SiteConfig = withUserConfig("site", {
 		// desktop 用于 >= 1024px；mobile 仅用于 < 1024px 的首页，手机非首页不显示壁纸。
 		// 数组顺序就是轮播顺序；只需要静态 Banner 时，每组保留一张图片即可。
 		src: {
-			desktop: ["assets/images/banner/desktop/1.webp"],
-			mobile: ["assets/images/banner/mobile/1.webp"],
+			desktop: ["/images/background-desktop.png"],
+			mobile: ["/images/background-mobile.png"],
 		},
 		// 图片裁切焦点："top"、"center" 或 "bottom"。
 		position: "center",
@@ -72,11 +72,14 @@ export const siteConfig: SiteConfig = withUserConfig("site", {
 			enable: true,
 			title: "Shirone",
 			subtitle: [
-				"特別なことはないけど、君がいると十分です",
-				"今でもあなたは私の光",
-				"君ってさ、知らないうちに私の毎日になってたよ",
-				"君と話すと、なんか毎日がちょっと楽しくなるんだ",
-				"今日はなんでもない日。でも、ちょっとだけいい日",
+				"记录生活，也记录那些不经意的瞬间",
+                "愿这里，装得下我的所思所想",
+                "把平凡的日子，写成自己的故事",
+                "不急着奔向远方，先认真走好脚下的路",
+                "偶尔停下来，看看自己走过的风景",
+                "这里没有答案，只有正在发生的故事",
+                "愿每一次记录，都成为未来的回望",
+                "生活很普通，但每一天都值得被记住",
 			],
 			typewriter: {
 				// 副标题逐字显示；关闭后直接显示完整副标题。
@@ -93,7 +96,7 @@ export const siteConfig: SiteConfig = withUserConfig("site", {
 		},
 		carousel: {
 			// 是否开启多张图片自动轮播；多张图片时生效，单张图片时自动降级为静态展示。
-			enable: true,
+			enable: false,
 			// 轮播切换间隔时间（毫秒），运行时最小值限制为 3000ms。
 			interval: 6000,
 			// 交叉淡入淡出（Crossfade）过渡时长（毫秒，默认 1200ms）。
