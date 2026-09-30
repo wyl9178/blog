@@ -33,7 +33,7 @@ export const profileConfig: ProfileConfig = withUserConfig("profile", {
 		{
 			name: "Telegram",
 			icon: "fa6-brands:telegram",
-			url: "https://github.com/wyl9178",
+			url: "https://t.me/ysdtWYLNB",
 		},
         {
 			name: "tiktok",
